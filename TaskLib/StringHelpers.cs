@@ -6,26 +6,28 @@ namespace TaskLib
     {
         public static string GetWordFromText(string input, int wordNumberToFind)
         {
-            var words = input.Split(' ');
-
             string result;
-            if (wordNumberToFind < 1)
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-            else if (string.IsNullOrEmpty(input))
+            if (input == null)
             {
                 throw new ArgumentNullException();
             }
-            else if (words.Length < wordNumberToFind)
-            {
-                throw new ArgumentException();
-            }
             else
             {
-                result = words[wordNumberToFind - 1];
+                var words = input.Split(' ');
+                
+                if (wordNumberToFind < 1)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }               
+                else if (words.Length < wordNumberToFind)
+                {
+                    throw new ArgumentException();
+                }
+                else
+                {
+                    result = words[wordNumberToFind - 1];
+                }
             }
-
             return result;
         }
 
