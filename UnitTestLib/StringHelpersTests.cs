@@ -50,6 +50,15 @@ namespace UnitTestLib
         }
 
         [TestMethod]
+        public void ReverseEmptyString()
+        {
+            var input = string.Empty;
+            var expected = string.Empty;
+            var actual = StringHelpers.Reverse(input);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException),
             "wordNumberToFind < 1")]
         public void ArgumentOutOfRangeExceptionTest()
@@ -77,6 +86,16 @@ namespace UnitTestLib
             string input = null;
             var wordNumberToFind = 2;
             _ = StringHelpers.GetWordFromText(input, wordNumberToFind);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException),
+            "input is null")]
+        public void ArgumentNullExceptionReverseTest()
+        {
+            string input = null;
+            
+            _ = StringHelpers.Reverse(input);
         }
 
     }

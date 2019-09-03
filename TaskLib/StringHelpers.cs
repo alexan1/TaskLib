@@ -13,7 +13,7 @@ namespace TaskLib
             }
             else
             {
-                var words = input.Split(' ');
+                var words = input.Trim().Split(' ');
                 
                 if (wordNumberToFind < 1)
                 {
@@ -34,9 +34,13 @@ namespace TaskLib
         public static string Reverse(string input)
         {
             string result;
-            if (string.IsNullOrEmpty(input))
+            if (input == null)
             {
                 throw new ArgumentNullException();
+            }
+            else if (input == string.Empty)
+            {
+                result = string.Empty;
             }
             else
             {
