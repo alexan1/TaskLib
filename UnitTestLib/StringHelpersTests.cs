@@ -98,5 +98,16 @@ namespace UnitTestLib
             _ = StringHelpers.Reverse(input);
         }
 
+        [TestMethod]
+        public void CorrectStringTest()
+        {
+            var input = "aAbBcC76";
+
+            var expected = "XXYYZZ";
+            var actual = StringHelpers.Correct(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
