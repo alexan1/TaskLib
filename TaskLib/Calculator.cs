@@ -34,7 +34,7 @@ namespace TaskLib
         {
             checked
             {
-                return a / b;
+                return Convert.ToDouble(a) / Convert.ToDouble(b);
             }
         }
 
