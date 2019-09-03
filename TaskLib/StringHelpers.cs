@@ -65,16 +65,11 @@ namespace TaskLib
                {"C","Z"},
             };
 
-            var regex = new Regex(String.Join("|", map.Keys));
+            var regex = new Regex(string.Join("|", map.Keys));
 
             string result = string.Empty;
-
-            var output = Regex.Replace(input, @"[\d-]", string.Empty);
-            //result = output.Replace('a', 'X').Replace('A', 'X').Replace('b', 'Y').Replace('B', 'Y').Replace('c', 'Z').Replace('C', 'Z');
-            //result = Regex.Replace(output, "a", "X", RegexOptions.IgnoreCase);
-
+            var output = Regex.Replace(input, @"[\d-]", string.Empty);           
             result = regex.Replace(output, m => map[m.Value]);
-
             return result;
         }
 
