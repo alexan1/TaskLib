@@ -57,12 +57,12 @@ namespace TaskLib
         {
             IDictionary<string, string> map = new Dictionary<string, string>()
             {
-               {"a","X"},
+               {"a","Z"},
                {"b","Y"},
-               {"c","Z"},
-               {"A","X"},
+               {"c","X"},
+               {"A","Z"},
                {"B","Y"},
-               {"C","Z"},
+               {"C","X"},
             };
 
             var regex = new Regex(string.Join("|", map.Keys));

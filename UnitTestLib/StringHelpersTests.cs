@@ -99,15 +99,104 @@ namespace UnitTestLib
         }
 
         [TestMethod]
-        public void CorrectStringTest()
+        public void CorrectStringTest1()
         {
-            var input = "aAbBcC76";
+            var input = "123";
 
-            var expected = "XXYYZZ";
+            var expected = "";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CorrectStringTest2()
+        {
+            var input = "";
+
+            var expected = "";
+            var actual = StringHelpers.Correct(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CorrectStringTest3()
+        {
+            var input = "a";
+
+            var expected = "Z";
+            var actual = StringHelpers.Correct(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CorrectStringTest4()
+        {
+            var input = "abfplBC";
+
+            var expected = "ZYfplYX";
+            var actual = StringHelpers.Correct(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CorrectStringTest5()
+        {
+            var input = "ABC";
+
+            var expected = "ZYX";
+            var actual = StringHelpers.Correct(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CorrectStringTest6()
+        {
+            var input = "abc";
+
+            var expected = "ZYX";
+            var actual = StringHelpers.Correct(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CorrectStringTest7()
+        {
+            var input = "DEF";
+
+            var expected = "DEF";
+            var actual = StringHelpers.Correct(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CorrectStringTest8()
+        {
+            var input = "a";
+
+            var expected = "Z";
+            var actual = StringHelpers.Correct(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CorrectStringTest9()
+        {
+            var input = "qw123erty";
+
+            var expected = "qwerty";
+            var actual = StringHelpers.Correct(input);
+
+            Assert.AreEqual(expected, actual);
+        }
+
 
     }
 }
