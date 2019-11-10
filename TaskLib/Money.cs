@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TaskLib
 {
-    class Money
+    public class Money
     {
         public static int CountChange(int money, int[] coins)
         {

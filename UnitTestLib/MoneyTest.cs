@@ -1,17 +1,22 @@
 ﻿using System.Collections.Generic;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-[TestFixture]
-public class CountChangeTest
+using TaskLib;
+
+namespace UnitTestLib
 {
-    [Test]
-    public void ShouldHandleTheExampleCase()
+    [TestClass]
+    public class CountChangeTest
     {
-        Assert.AreEqual(3, Challenge.CountChange(4, new int[] { 1, 2 }));
-    }
-    [Test]
-    public void ShouldHandleAnotherSimpleCase()
-    {
-        Assert.AreEqual(4, Challenge.CountChange(10, new int[] { 5, 2, 3 }));
+        [TestMethod]
+        public void ShouldHandleTheExampleCase()
+        {
+            Assert.AreEqual(3, Money.CountChange(4, new int[] { 1, 2 }));
+        }
+        [TestMethod]
+        public void ShouldHandleAnotherSimpleCase()
+        {
+            Assert.AreEqual(4, Money.CountChange(10, new int[] { 5, 2, 3 }));
+        }
     }
 }

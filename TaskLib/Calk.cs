@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TaskLib
 {
-    class Calk
+    public class Calk
     {
         // utility function to find value of and operand  
         static int value(char c) { return (int)(c - '0'); }
@@ -12,7 +12,7 @@ namespace TaskLib
         // This function evaluates simple  
         // expressions. It returns -1 if the  
         // given expression is invalid.  
-        static int evaluate(string exp)
+        static int Evaluate(string exp)
         {
             // Base Case: Given expression is empty  
             if (exp.Length == 0) return -1;
@@ -29,7 +29,7 @@ namespace TaskLib
                 char opr = exp[i], opd = exp[i + 1];
 
                 // If next to next character is not an operand  
-                if (isOperand(opd) == false) return -1;
+                //if (isOperand(opd) == false) return -1;
 
                 // Update result according to the operator  
                 if (opr == '+') res += value(opd);
@@ -42,4 +42,5 @@ namespace TaskLib
             }
             return res;
         }
+    }
 }

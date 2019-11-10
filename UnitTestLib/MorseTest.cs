@@ -1,14 +1,19 @@
 ﻿using System;
-[TestFixture]
+using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TaskLib;
+
+
+[TestClass]
 public class PossibilitiesTest
 {
-    [Test]
+    [TestMethod]
     public void ASingleSignal()
     {
-        Assert.AreEqual(new List<string> { "E" }, Challenge.Possibilities("."));
+        Assert.AreEqual(new List<string> { "E" }, Morse.Possibilities("."));
         Assert.AreEqual(new List<string> { "A" }, Challenge.Possibilities(".-"));
     }
-    [Test]
+    [TestMethod]
     public void AWordWithASingleUnknownSignal()
     {
         Assert.AreEqual(new List<string> { "E", "T" }, Challenge.Possibilities("?"));

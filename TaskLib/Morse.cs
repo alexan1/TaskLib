@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TaskLib
 {
-    class Morse
+    public class Morse
     {
         public static List<string> Possibilities(string word)
         {
