@@ -15,7 +15,8 @@ namespace TaskLib
         }
         
         public static int Calc(string exp)
-        {           
+        {
+            exp = exp.Replace(" ", "");
             if (exp.Length == 0) return -1;
                         
             int res = value(exp[0]);
