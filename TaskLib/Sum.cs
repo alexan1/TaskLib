@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace TaskLib
 {
-    class Sum
+    public class Sum
     {
-        public int MaxSumDivThree(int[] nums)
+        public static int MaxSumDivThree(int[] nums)
         {
             var result = new List<int>();
             var n = nums.Length;

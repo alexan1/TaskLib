@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TaskLib
 {
-    class Synonyms
+    public class Synonyms
     {
     }
 }
