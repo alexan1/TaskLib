@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TaskLib
 {
-    public class Balance
+    public static class Balance
     {
         private static readonly char[] OpenParentheses = { '(', '[', '{' };
         private static readonly char[] CloseParentheses = { ')', ']', '}' };
