@@ -6,6 +6,11 @@ namespace TaskLib
 {
     public class Synonyms
     {
+        public static List<string> Variants(string sentence, List<string> synonims)
+        {
+            var result = new List<string>();
 
+            return result;
+        }
     }
 }

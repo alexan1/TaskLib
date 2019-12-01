@@ -10,17 +10,24 @@ namespace UnitTestLib
     public class SynonymsTest
     {
         [TestMethod]
-        public void ShouldHandleAddition()
+        public void Sentence1()
         {
+
+            var expected = new List<string> {"I am cheerful today but was sad yesterday",
+                "I am cheerful today but was sorrow yesterday",
+                "I am happy today but was sad yesterday",
+                "I am happy today but was sorrow yesterday",
+                "I am joy today but was sad yesterday",
+                "I am joy today but was sorrow yesterday" };
             Assert.AreEqual(2, Calk.Calc("1+1"), 1e-15);
         }
         [TestMethod]
-        public void ShouldHandleSubtraction()
+        public void Sentence2()
         {
             Assert.AreEqual(0, Calk.Calc("1 - 1"), 1e-15);
         }
         [TestMethod]
-        public void ShouldHandleMultiplication()
+        public void Sentence3()
         {
             Assert.AreEqual(1, Calk.Calc("1* 1"), 1e-15);
             Assert.AreEqual(1476, Calk.Calc("12* 123"), 1e-15);
