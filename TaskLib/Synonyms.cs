@@ -10,6 +10,11 @@ namespace TaskLib
         {
             var result = new List<string>();
 
+            foreach (var syn in synonims)
+            {                 
+                    result.Add(sentence.Replace(syn.Key, syn.Value));               
+            }
+
             return result;
         }
     }
