@@ -7,7 +7,7 @@ namespace TaskLib
 {
     public class Triplets
     {
-        public IList<IList<int>> ThreeSum(int[] nums)
+        public static IList<IList<int>> ThreeSum(int[] nums)
         {
 
             nums = nums.OrderBy(x => x).ToArray();
