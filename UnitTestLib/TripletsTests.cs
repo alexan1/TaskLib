@@ -17,7 +17,7 @@ namespace UnitTestLib
             //    new List<int>(){ -1, -1, 2 }, 
             //    new List<int>{ -1, 0, 1 } };
 
-            //CollectionAssert.AreEqual(18, Sum.MaxSumDivThree(nums));
+            Assert.AreEqual(18, Sum.MaxSumDivThree(input));
         }
         [TestMethod]
         public void SumTest2()
