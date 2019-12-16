@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TaskLib
 {
-    public class Morse
+    public static class Morse
     {
         public static List<string> Possibilities(string word)
         {

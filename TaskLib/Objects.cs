@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+﻿using System.Reflection;
 
 namespace TaskLib
 {
@@ -9,7 +6,7 @@ namespace TaskLib
     {
         public string F()
         {
-            var clas = this.GetType().Name;
+            var clas = GetType().Name;
             var method = MethodBase.GetCurrentMethod().Name;
             var result = clas + "." + method;
             return result;

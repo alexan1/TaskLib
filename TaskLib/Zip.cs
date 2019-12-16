@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace TaskLib
 {
-    public class Zip
+    public static class Zip
     {
 
         public static int Solution(int A, int B)
@@ -17,7 +17,6 @@ namespace TaskLib
             var result = common + s1.Substring(shortestLength) + s2.Substring(shortestLength);
 
             return Int32.Parse(result);
-
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace TaskLib
@@ -11,7 +9,7 @@ namespace TaskLib
         {
             var result = new List<int>();
             var n = nums.Length;
-            subsetSums(nums, 0, n - 1, 0, result);
+            SubsetSums(nums, 0, n - 1, 0, result);
 
             result = result.OrderBy(x => x).ToList();
 
@@ -23,7 +21,7 @@ namespace TaskLib
             return 0;
         }
 
-        public static void subsetSums(int[] arr, int l, int r, int sum, List<int> result)
+        public static void SubsetSums(int[] arr, int l, int r, int sum, List<int> result)
         {
 
             if (l > r)
@@ -31,9 +29,9 @@ namespace TaskLib
                 result.Add(sum);
             }
 
-            subsetSums(arr, l + 1, r, sum + arr[l], result);
+            SubsetSums(arr, l + 1, r, sum + arr[l], result);
 
-            subsetSums(arr, l + 1, r, sum, result);
+            SubsetSums(arr, l + 1, r, sum, result);
         }
 
     }

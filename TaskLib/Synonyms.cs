@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace TaskLib
 {
-    public class Synonyms
+    public static class Synonyms
     {
         public static List<string> Variants(string sentence, Dictionary<string, string> synonims)
         {

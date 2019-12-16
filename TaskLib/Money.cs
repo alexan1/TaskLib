@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TaskLib
+﻿namespace TaskLib
 {
-    public class Money
+    public static class Money
     {
         public static int CountChange(int money, int[] coins)
         {

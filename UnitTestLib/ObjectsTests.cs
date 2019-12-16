@@ -1,9 +1,5 @@
-﻿using System;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TaskLib;
-using System.Diagnostics;
-using System.Reflection;
 
 
 namespace UnitTestLib
@@ -14,17 +10,8 @@ namespace UnitTestLib
         [TestMethod]
         public void ATest()
         {
-            //var st = new StackTrace();
-            //var sf = st.GetFrame(1);
-
-            //var currentMethodName = sf.GetMethod().Name;
-
-            //var res = MethodBase.GetCurrentMethod().Name;
-
-
             var expected = "A.F";
-            A a = new A();
-            //var name = type
+            A a = new A();            
             var result = a.F();
 
             Assert.AreEqual(expected, result);
