@@ -11,3 +11,12 @@ having count(*) > 1
 
 SELECT product.name, product_category.name FROM product
 join product_category on product.product_category_id = product_category.product_category_id
+
+SELECT distinct city
+FROM customer
+order by city
+
+SELECT city, count(*) as customer_count
+FROM customer
+group by city
+having count(*) > 2
