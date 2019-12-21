@@ -18,9 +18,7 @@ namespace TaskLib
 
         public object CopyFilter<T>()
         {
-            return new Filter { Set = new HashSet<int>(Set) };
-
-            //return this.MemberwiseClone();
+            return new Filter { Set = new HashSet<int>(Set) };            
         }           
 
     }
