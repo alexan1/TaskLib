@@ -42,6 +42,17 @@ namespace UnitTestLib
             Assert.IsTrue(Numbers.IsPrime(num));
         }
 
+        [TestMethod]
+        public void GenerateLowestNumberTest1()
+        {
+            Assert.AreEqual("012", Numbers.GenerateLowestNumber("4205123", 4));
+        }
+
+        [TestMethod]
+        public void GenerateLowestNumberTest2()
+        {
+            Assert.AreEqual("104", Numbers.GenerateLowestNumber("216504", 3));
+        }
 
     }
 }

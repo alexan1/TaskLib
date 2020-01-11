@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace TaskLib
 {
@@ -36,6 +37,49 @@ namespace TaskLib
 
 
             return result;
+        }
+
+        public static string GenerateLowestNumber(string number, int n)
+        {
+            if (number == null || number.Length == 0 || n >= number.Length)
+            {
+                return null;
+            }
+
+            int start = 0;
+            StringBuilder sb = new StringBuilder(number.Length - n);
+            for (int i = 0; i < number.Length - n; i++)
+            {
+                int end = number.Length - n + i;
+                if (start == end)
+                {
+                    sb.Append(number[start]);
+                    continue;
+                }
+                String subStr = number.Substring(start, end);
+                char min = FindMin(subStr);
+                start = start + subStr.IndexOf(min) + 1;
+                sb.Append(min);
+            }
+            return sb.ToString();
+        }
+
+        public static char FindMin(String subStr)
+        {
+            if (subStr.Length == 1)
+            {
+                return subStr[0];
+            }
+            char min = subStr[0];
+            for (int i = 0; i < subStr.Length; i++)
+            {
+                char num = subStr[i];
+                if (num < min)
+                {
+                    min = num;
+                }
+            }
+            return min;
         }
 
     }

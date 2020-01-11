@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TaskLib
 {
-    public class P
+    public class Person
     {
         public string Name;
-        public P[] Acquaintances;
+        public Person[] Acquaintances;
 
-        public P(string name, P[] acquaintances)
+        public Person(string name, Person[] acquaintances)
         {
             if (String.IsNullOrWhiteSpace(name))
             {
@@ -28,8 +27,8 @@ namespace TaskLib
             }
 
 
-            Stack<P> myStack = new Stack<P>();
-            foreach (P acquaintance in this.Acquaintances)
+            var myStack = new Stack<Person>();
+            foreach (var acquaintance in this.Acquaintances)
             {
                 myStack.Push(acquaintance);
             }
@@ -43,7 +42,7 @@ namespace TaskLib
                     return true;
                 }
 
-                foreach (P acquaintance in person.Acquaintances)
+                foreach (var acquaintance in person.Acquaintances)
                 {
                     myStack.Push(acquaintance);
                 }

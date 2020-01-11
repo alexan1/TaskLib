@@ -15,11 +15,6 @@ namespace TaskLib
         public string[] OrderProductsByPriority(string[] productCodes)
         {
             return  productCodes.OrderBy(x => GetPriority(x)).ToArray<string>();
-        }
-
-        public static string GenerateLowestNumber(string number, int n)
-        {
-
-        }
+        }        
     }
 }
