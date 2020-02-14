@@ -7,7 +7,7 @@ namespace TaskLib
         public static string MostCommonWord(string text)
         {
             return text.Split(' ').GroupBy(x => x).Select(x => new { KeyField = x.Key, Count = x.Count() })
-            .OrderByDescending(x => x.Count).First().KeyField.ToString();
+            .OrderByDescending(x => x.Count).First().KeyField;
         }
     }
 }
