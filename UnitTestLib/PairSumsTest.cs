@@ -8,7 +8,7 @@ namespace UnitTestLib
     public class PairSumsTest
     {
         [TestMethod]
-        public void SumTest1()
+        public void PairSumTest1()
         {
             int[] nums = {1,2,3,4,3};
             var sum = 6;
@@ -17,7 +17,7 @@ namespace UnitTestLib
             Assert.AreEqual(result, PairSums.numberOfWays(nums, sum));
         }
         [TestMethod]
-        public void SumTest2()
+        public void PairSumTest2()
         {
             int[] nums = {1,5,3,3,3};
             var sum = 6;
