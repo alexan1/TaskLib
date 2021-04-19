@@ -51,12 +51,39 @@ namespace TaskLib
             return result.ToString();
         }
 
-        private static int[] CountSubarrays(int[] arr)
+        public static int[] CountSubarrays(int[] arr)
         {
-            
-            return new int[0];
+            int[] answer = new int[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int count = 1;
+                int localMax = arr[i];
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[j] < localMax)
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                for (int k = i - 1; k >= 0; k--)
+                {
+                    if (arr[k] < localMax)
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                answer[i] = count;
+            }
+            return answer;
         }
     }
-}
 }
 

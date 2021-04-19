@@ -44,5 +44,15 @@ namespace UnitTestLib
 
             Assert.AreEqual(output, Facebook.RotationalCipher(input, rotationFactor));
         }
+
+        [TestMethod]
+        public void CountSubarrays1()
+        {
+            int[] arr = { 3, 4, 1, 6, 2 };
+            int[] output = { 1, 3, 1, 5, 1 };
+
+            CollectionAssert.AreEqual(output, Facebook.CountSubarrays(arr));           
+        }
+
     }
 }
