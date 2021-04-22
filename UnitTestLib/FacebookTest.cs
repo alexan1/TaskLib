@@ -11,8 +11,8 @@ namespace UnitTestLib
         public void PairSumTest1()
         {
             int[] nums = {1,2,3,4,3};
-            var sum = 6;
-            var result = 2;
+            const int sum = 6;
+            const int result = 2;
 
             Assert.AreEqual(result, Facebook.NumberOfWays(nums, sum));
         }
@@ -20,8 +20,8 @@ namespace UnitTestLib
         public void PairSumTest2()
         {
             int[] nums = {1,5,3,3,3};
-            var sum = 6;
-            var result = 4;
+            const int sum = 6;
+            const int result = 4;
 
             Assert.AreEqual(result, Facebook.NumberOfWays(nums, sum));
         }
@@ -29,18 +29,18 @@ namespace UnitTestLib
         [TestMethod]
         public void CipherTest1()
         {
-            var input = "Zebra-493?";
-            var rotationFactor = 3;
-            var output = "Cheud-726?";
+            const string input = "Zebra-493?";
+            const int rotationFactor = 3;
+            const string output = "Cheud-726?";
 
             Assert.AreEqual(output, Facebook.RotationalCipher(input, rotationFactor));
         }
         [TestMethod]
         public void CipherTest2()
         {
-            var input = "abcdefghijklmNOPQRSTUVWXYZ0123456789";
-            var rotationFactor = 39;
-            var output = "nopqrstuvwxyzABCDEFGHIJKLM9012345678";
+            const string input = "abcdefghijklmNOPQRSTUVWXYZ0123456789";
+            const int rotationFactor = 39;
+            const string output = "nopqrstuvwxyzABCDEFGHIJKLM9012345678";
 
             Assert.AreEqual(output, Facebook.RotationalCipher(input, rotationFactor));
         }

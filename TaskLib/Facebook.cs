@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Globalization;
 using System.Text;
 
 namespace TaskLib
@@ -7,16 +7,16 @@ namespace TaskLib
     {
         public static int NumberOfWays(int[] arr, int k)
         {
-            int count = 0; 
+            var count = 0; 
                         
-            for (int i = 0; i < arr.Length; i++)
-                for (int j = i + 1; j < arr.Length; j++)
+            for (var i = 0; i < arr.Length; i++)
+                for (var j = i + 1; j < arr.Length; j++)
                     if ((arr[i] + arr[j]) == k)
                         count++;
             return count;
         }
 
-        public static string RotationalCipher(String input, int rotationFactor)
+        public static string RotationalCipher(string input, int rotationFactor)
         {
             StringBuilder result = new StringBuilder();
 
@@ -24,7 +24,7 @@ namespace TaskLib
             {
                 if (char.IsDigit(ch))
                 {
-                    var ch1 = ((char.GetNumericValue(ch) + rotationFactor) % 10).ToString();
+                    var ch1 = ((char.GetNumericValue(ch) + rotationFactor) % 10).ToString(CultureInfo.InvariantCulture);
                     result.Append(ch1);
                 }
                 else if (char.IsLetter(ch))
@@ -53,12 +53,12 @@ namespace TaskLib
 
         public static int[] CountSubarrays(int[] arr)
         {
-            int[] answer = new int[arr.Length];
-            for (int i = 0; i < arr.Length; i++)
+            var answer = new int[arr.Length];
+            for (var i = 0; i < arr.Length; i++)
             {
-                int count = 1;
-                int localMax = arr[i];
-                for (int j = i + 1; j < arr.Length; j++)
+                var count = 1;
+                var localMax = arr[i];
+                for (var j = i + 1; j < arr.Length; j++)
                 {
                     if (arr[j] < localMax)
                     {
@@ -69,7 +69,7 @@ namespace TaskLib
                         break;
                     }
                 }
-                for (int k = i - 1; k >= 0; k--)
+                for (var k = i - 1; k >= 0; k--)
                 {
                     if (arr[k] < localMax)
                     {
