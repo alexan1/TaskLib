@@ -13,12 +13,7 @@ namespace TaskLib
 
             result = result.OrderBy(x => x).ToList();
 
-            foreach (var i in result)
-            {
-                if (i % 3 == 0)
-                    return i;
-            }
-            return 0;
+            return result.FirstOrDefault(i => i % 3 == 0);
         }
 
         public static void SubsetSums(int[] arr, int l, int r, int sum, List<int> result)
