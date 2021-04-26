@@ -23,12 +23,23 @@
                                 
                 if (IsOperand(opd) == false) return -1;
                                 
-                if (opr == '+') res += Value(opd);
-                else if (opr == '-') res -= Value(opd);
-                else if (opr == '*') res *= Value(opd);
-                else if (opr == '/') res /= Value(opd);
-                                
-                else return -1;
+                switch (opr)
+                {
+                    case '+':
+                        res += Value(opd);
+                        break;
+                    case '-':
+                        res -= Value(opd);
+                        break;
+                    case '*':
+                        res *= Value(opd);
+                        break;
+                    case '/':
+                        res /= Value(opd);
+                        break;
+                    default:
+                        return -1;
+                }
             }
             return res;
         }
