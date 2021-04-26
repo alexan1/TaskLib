@@ -10,9 +10,9 @@ namespace UnitTestLib
         [TestMethod]
         public void WordIsFound1()
         {
-            var input = "one two three";
-            var wordNumberToFind = 2;
-            var expeted = "two";
+            const string input = "one two three";
+            const int wordNumberToFind = 2;
+            const string expeted = "two";
 
             var actual = StringHelpers.GetWordFromText(input, wordNumberToFind);
 
@@ -22,9 +22,9 @@ namespace UnitTestLib
         [TestMethod]
         public void WordIsFound2()
         {
-            var input = "one;two three";
-            var wordNumberToFind = 2;
-            var expeted = "three";
+            const string input = "one;two three";
+            const int wordNumberToFind = 2;
+            const string expeted = "three";
 
             var actual = StringHelpers.GetWordFromText(input, wordNumberToFind);
 
@@ -34,8 +34,8 @@ namespace UnitTestLib
         [TestMethod]
         public void ReverseTest1()
         {
-            var input = "one";
-            var expected = "eno";
+            const string input = "one";
+            const string expected = "eno";
             var actual = StringHelpers.Reverse(input);
             Assert.AreEqual(expected, actual);
         }
@@ -43,8 +43,8 @@ namespace UnitTestLib
         [TestMethod]
         public void ReverseTest2()
         {
-            var input = "abcd dcba";
-            var expected = "abcd dcba";
+            const string input = "abcd dcba";
+            const string expected = "abcd dcba";
             var actual = StringHelpers.Reverse(input);
             Assert.AreEqual(expected, actual);
         }
@@ -63,8 +63,8 @@ namespace UnitTestLib
             "wordNumberToFind < 1")]
         public void ArgumentOutOfRangeExceptionTest()
         { 
-            var input = "one two three";
-            var wordNumberToFind = 0;
+            const string input = "one two three";
+            const int wordNumberToFind = 0;
             _ = StringHelpers.GetWordFromText(input, wordNumberToFind);
         }
 
@@ -73,8 +73,8 @@ namespace UnitTestLib
             "Not enough words")]
         public void ArgumentExceptionTest()
         {
-            var input = "one";
-            var wordNumberToFind = 2;
+            const string input = "one";
+            const int wordNumberToFind = 2;
             _ = StringHelpers.GetWordFromText(input, wordNumberToFind);
         }
 
@@ -83,9 +83,8 @@ namespace UnitTestLib
             "input is null")]
         public void ArgumentNullExceptionTest()
         {
-            string input = null;
-            var wordNumberToFind = 2;
-            _ = StringHelpers.GetWordFromText(input, wordNumberToFind);
+            const int wordNumberToFind = 2;
+            _ = StringHelpers.GetWordFromText(null, wordNumberToFind);
         }
 
         [TestMethod]
@@ -93,17 +92,15 @@ namespace UnitTestLib
             "input is null")]
         public void ArgumentNullExceptionReverseTest()
         {
-            string input = null;
-            
-            _ = StringHelpers.Reverse(input);
+            _ = StringHelpers.Reverse(null);
         }
 
         [TestMethod]
         public void CorrectStringTest1()
         {
-            var input = "123";
+            const string input = "123";
 
-            var expected = "";
+            const string expected = "";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
@@ -112,9 +109,9 @@ namespace UnitTestLib
         [TestMethod]
         public void CorrectStringTest2()
         {
-            var input = "";
+            const string input = "";
 
-            var expected = "";
+            const string expected = "";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
@@ -123,9 +120,9 @@ namespace UnitTestLib
         [TestMethod]
         public void CorrectStringTest3()
         {
-            var input = "a";
+            const string input = "a";
 
-            var expected = "Z";
+            const string expected = "Z";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
@@ -134,9 +131,9 @@ namespace UnitTestLib
         [TestMethod]
         public void CorrectStringTest4()
         {
-            var input = "abfplBC";
+            const string input = "abfplBC";
 
-            var expected = "ZYfplYX";
+            const string expected = "ZYfplYX";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
@@ -145,9 +142,9 @@ namespace UnitTestLib
         [TestMethod]
         public void CorrectStringTest5()
         {
-            var input = "ABC";
+            const string input = "ABC";
 
-            var expected = "ZYX";
+            const string expected = "ZYX";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
@@ -156,9 +153,9 @@ namespace UnitTestLib
         [TestMethod]
         public void CorrectStringTest6()
         {
-            var input = "abc";
+            const string input = "abc";
 
-            var expected = "ZYX";
+            const string expected = "ZYX";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
@@ -167,9 +164,9 @@ namespace UnitTestLib
         [TestMethod]
         public void CorrectStringTest7()
         {
-            var input = "DEF";
+            const string input = "DEF";
 
-            var expected = "DEF";
+            const string expected = "DEF";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
@@ -178,9 +175,9 @@ namespace UnitTestLib
         [TestMethod]
         public void CorrectStringTest8()
         {
-            var input = "a";
+            const string input = "a";
 
-            var expected = "Z";
+            const string expected = "Z";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
@@ -189,14 +186,12 @@ namespace UnitTestLib
         [TestMethod]
         public void CorrectStringTest9()
         {
-            var input = "qw123erty";
+            const string input = "qw123erty";
 
-            var expected = "qwerty";
+            const string expected = "qwerty";
             var actual = StringHelpers.Correct(input);
 
             Assert.AreEqual(expected, actual);
         }
-
-
     }
 }

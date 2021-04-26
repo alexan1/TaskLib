@@ -4,11 +4,11 @@ namespace TaskLib
 {
     public class Counter
     {
-        private static int count = 0;
+        private static int _count;
 
         public static int Increment()
         {            
-            return Interlocked.Increment(ref count);
+            return Interlocked.Increment(ref _count);
         }
     }
 }

@@ -7,11 +7,11 @@ namespace TaskLib
     {
         private static readonly char[] OpenParentheses = { '(', '[', '{' };
         private static readonly char[] CloseParentheses = { ')', ']', '}' };
-        static public bool Check(string str)
+        public static bool Check(string str)
         {
-            Stack<int> parentheses = new Stack<int>();
+            var parentheses = new Stack<int>();
 
-            foreach (char chr in str)
+            foreach (var chr in str)
             {
                 int index;
 

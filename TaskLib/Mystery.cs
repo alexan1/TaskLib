@@ -10,7 +10,7 @@ namespace TaskLib
 
         public Person(string name, Person[] acquaintances)
         {
-            if (String.IsNullOrWhiteSpace(name))
+            if (string.IsNullOrWhiteSpace(name))
             {
                 throw new ArgumentException("Name cannot be null or white space.", name);
             }

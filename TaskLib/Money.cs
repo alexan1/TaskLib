@@ -4,14 +4,14 @@
     {
         public static int CountChange(int money, int[] coins)
         {
-            int[] ways = new int[money + 1];
+            var ways = new int[money + 1];
             ways[0] = 1;
 
-            for (int i = 0; i < coins.Length; i++)
+            foreach (var t in coins)
             {
-                for (int j = coins[i]; j <= money; j++)
+                for (var j = t; j <= money; j++)
                 {
-                    ways[j] += ways[j - coins[i]];
+                    ways[j] += ways[j - t];
                 }
             }
 

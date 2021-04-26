@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TaskLib;
 
-
 namespace UnitTestLib
 {
     [TestClass]
@@ -11,7 +10,7 @@ namespace UnitTestLib
         public void IsSetContain()
         {
             var filter = new Filter();
-            var number = 5;
+            const int number = 5;
             filter.Filtrate(number); 
             Assert.IsTrue(filter.Set.Contains(number));
         }
@@ -20,8 +19,8 @@ namespace UnitTestLib
         public void IsNotSetContain()
         {
             var filter = new Filter();
-            var number = 5;
-            var number2 = 7;
+            const int number = 5;
+            const int number2 = 7;
             filter.Filtrate(number);
             Assert.IsFalse(filter.Set.Contains(number2));
         }
@@ -30,12 +29,12 @@ namespace UnitTestLib
         public void FilterCopy()
         {
             var filter1 = new Filter();
-            var number = 5;            
+            const int number = 5;            
             filter1.Filtrate(number);
 
-            var filter2 = (Filter)filter1.CopyFilter<Filter>();
+            var filter2 = (Filter)filter1.CopyFilter();
 
-            var number2 = 7;
+            const int number2 = 7;
             filter2.Filtrate(number2);
 
             Assert.IsTrue(filter2.Set.Contains(number2));

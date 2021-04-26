@@ -3,39 +3,37 @@ using TaskLib;
 
 namespace UnitTestLib
 {
-
     [TestClass]
     public class BalanceTest
     {
         [TestMethod]
         public void ShouldBeTrue()
         {
-            var input = "()";
+            const string input = "()";
             Assert.IsTrue(Balance.Check(input));
         }
         [TestMethod]
         public void ShouldBeTrue1()
         {
-            var input = "()[]{}";
+            const string input = "()[]{}";
             Assert.IsTrue(Balance.Check(input));
         }
         [TestMethod]
         public void ShouldBeFalse1()
         {
-
-            var input = "(]";
+            const string input = "(]";
             Assert.IsFalse(Balance.Check(input));
         }
         [TestMethod]
         public void ShouldBeFalse2()
         {
-            var input = "([)]";
+            const string input = "([)]";
             Assert.IsFalse(Balance.Check(input));
         }
         [TestMethod]
         public void ShouldBeTrue2()
         {
-            var input = "{[]}";
+            const string input = "{[]}";
             Assert.IsTrue(Balance.Check(input));
         }
     }

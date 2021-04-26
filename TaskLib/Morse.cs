@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace TaskLib
 {
@@ -26,10 +27,7 @@ namespace TaskLib
                 {"?", "E"},
     };
 
-            var result = new List<string>();
-
             var words = new List<string>();
-
 
             if (word.Contains("?"))
             {
@@ -39,13 +37,7 @@ namespace TaskLib
             else
                 words.Add(word);
 
-            foreach (var w in words)
-            {
-                result.Add(translator[w]);
-            }
-
-            return result;
-
+            return words.Select(w => translator[w]).ToList();
         }
     }
 }

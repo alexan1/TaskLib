@@ -11,7 +11,7 @@ namespace UnitTestLib
         [TestMethod]
         public void Sentence1()
         {
-            var text = "I am happy today but was sad yesterday";
+            const string text = "I am happy today but was sad yesterday";
             var synonims = new Dictionary<string, string>{ { "happy", "joy" }, { "sad", "sorrow" }, { "joy", "cheerful" } };
             
 

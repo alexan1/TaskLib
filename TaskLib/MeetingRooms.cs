@@ -44,8 +44,6 @@ namespace TaskLib
                 .OrderByDescending(s => s.Count())
                 .Select(s => s.Count()).First();
 
-
-
             return result;
         }
     }

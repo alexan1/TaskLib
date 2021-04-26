@@ -3,7 +3,6 @@ using TaskLib;
 
 namespace UnitTestLib
 {
-
     [TestClass]
     public class CalcTest
     {

@@ -16,10 +16,9 @@ namespace TaskLib
             Set.Add(num);
         }
 
-        public object CopyFilter<T>()
+        public object CopyFilter()
         {
             return new Filter { Set = new HashSet<int>(Set) };            
-        }           
-
+        }
     }
 }

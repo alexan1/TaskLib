@@ -28,6 +28,5 @@ namespace TaskLib
 
             SubsetSums(arr, l + 1, r, sum, result);
         }
-
     }
 }

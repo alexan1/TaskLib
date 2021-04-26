@@ -5,14 +5,12 @@ using TaskLib;
 
 namespace UnitTestLib
 {
-
     [TestClass]
     public class NodeTests
     {
         [TestMethod]
         public void NodeTest1()
         {
-
             var orders = new List<Order>
             {
                 new Order { Customer = "C3", Price = 125m },
@@ -25,6 +23,5 @@ namespace UnitTestLib
             
             CollectionAssert.AreEqual(expected, Order.GetSuperCustomers(orders).ToList());
         }
-
     }
 }

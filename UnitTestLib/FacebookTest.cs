@@ -3,7 +3,6 @@ using TaskLib;
 
 namespace UnitTestLib
 {
-
     [TestClass]
     public class FacebookTest
     {
@@ -53,6 +52,5 @@ namespace UnitTestLib
 
             CollectionAssert.AreEqual(output, Facebook.CountSubarrays(arr));           
         }
-
     }
 }

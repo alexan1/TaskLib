@@ -3,7 +3,7 @@
         stack = [],
         i, character, bracePosition;
 
-    for (i = 0; character = s[i]; i++) {
+    for (i = 0; character === s[i]; i++) {
         bracePosition = parentheses.indexOf(character);
 
         if (bracePosition === -1) {

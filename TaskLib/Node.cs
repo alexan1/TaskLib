@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TaskLib
+﻿namespace TaskLib
 {
     public class Node
     {
         // keep these fields public
-        public Node left, right;
+        public Node Left, Right;
 
         /// the value of this​​​​​​‌​​​‌​‌​​‌‌‌​​‌‌​​‌‌​​‌​​ node
-        public int value;
+        public int Value;
 
         public Node Find(int v)
         {
-            Node n = this;
+            var n = this;
 
             while (n != null)
             {
-                if (v > n.value)
-                    n = n.right;
-                else if (v < n.value)
-                    n = n.left;
+                if (v > n.Value)
+                    n = n.Right;
+                else if (v < n.Value)
+                    n = n.Left;
                 else
                     return n;
             }

@@ -3,7 +3,6 @@ using TaskLib;
 
 namespace UnitTestLib
 {
-
     [TestClass]
     public class ZipTests
     {
@@ -20,18 +19,18 @@ namespace UnitTestLib
         [TestMethod]
         public void ZipTest2()
         {
-            var b = 12;
-            var a = 56;
-            var expected = 5162;
+            const int b = 12;
+            const int a = 56;
+            const int expected = 5162;
 
             Assert.AreEqual(expected, Zip.Solution(a, b));
         }
         [TestMethod]
         public void ZipTest3()
         {
-            var a = 12345;
-            var b = 678;
-            var expected = 16273845;
+            const int a = 12345;
+            const int b = 678;
+            const int expected = 16273845;
 
             Assert.AreEqual(expected, Zip.Solution(a, b));
         }
@@ -39,9 +38,9 @@ namespace UnitTestLib
         [TestMethod]
         public void ZipTest4()
         {
-            var a = 123;
-            var b = 67890;
-            var expected = 16273890;
+            const int a = 123;
+            const int b = 67890;
+            const int expected = 16273890;
 
             Assert.AreEqual(expected, Zip.Solution(a, b));
         }
@@ -49,9 +48,9 @@ namespace UnitTestLib
         [TestMethod]
         public void ZipTest5()
         {
-            var a = 1234;
-            var b = 0;
-            var expected = 10234;
+            const int a = 1234;
+            const int b = 0;
+            const int expected = 10234;
 
             Assert.AreEqual(expected, Zip.Solution(a, b));
         }

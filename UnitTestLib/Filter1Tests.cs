@@ -5,7 +5,6 @@ using TaskLib;
 
 namespace UnitTestLib
 {
-
     [TestClass]
     public class Filter1Tests
     {

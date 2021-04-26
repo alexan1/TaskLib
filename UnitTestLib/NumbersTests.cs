@@ -11,7 +11,7 @@ namespace UnitTestLib
         [TestMethod]
         public void Is1000Numbers()
         {
-            var expected = 1000;
+            const int expected = 1000;
             var result = Numbers.Get1000Primes();
 
             Assert.AreEqual(expected, result.Count());
@@ -20,14 +20,14 @@ namespace UnitTestLib
         [TestMethod]
         public void ThisIsPrime()
         {
-            var prime = 3;
+            const int prime = 3;
             Assert.IsTrue(Numbers.IsPrime(prime));
         }
 
         [TestMethod]
         public void ThisIsNotPrime()
         {
-            var notprime = 4;
+            const int notprime = 4;
             Assert.IsFalse(Numbers.IsPrime(notprime));
         }
 
@@ -36,8 +36,9 @@ namespace UnitTestLib
         {
             var result = Numbers.Get1000Primes();
             var rand = new Random();
-            int index = rand.Next(2, result.Count());
-            var num =  result.ElementAt(index);
+            var enumerable = result as int[] ?? result.ToArray();
+            var index = rand.Next(2, enumerable.Count());
+            var num =  enumerable.ElementAt(index);
 
             Assert.IsTrue(Numbers.IsPrime(num));
         }
@@ -53,6 +54,5 @@ namespace UnitTestLib
         {
             Assert.AreEqual("104", Numbers.GenerateLowestNumber("216504", 3));
         }
-
     }
 }

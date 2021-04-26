@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace TaskLib
 {
@@ -40,18 +39,27 @@ namespace TaskLib
 
         public static void FizzBuzz(int n)
         {
-            for (int i = 1; i <= n; i++)
+            for (var i = 1; i <= n; i++)
             {
-                bool fizz = i % 3 == 0;
-                bool buzz = i % 5 == 0;
-                if (fizz && buzz)
-                    Console.WriteLine("FizzBuzz");
-                else if (fizz)
-                    Console.WriteLine("Fizz");
-                else if (buzz)
-                    Console.WriteLine("Buzz");
-                else
-                    Console.WriteLine(i);
+                var fizz = i % 3 == 0;
+                var buzz = i % 5 == 0;
+                switch (fizz)
+                {
+                    case true when buzz:
+                        Console.WriteLine("FizzBuzz");
+                        break;
+                    case true:
+                        Console.WriteLine("Fizz");
+                        break;
+                    default:
+                    {
+                        if (buzz)
+                            Console.WriteLine("Buzz");
+                        else
+                            Console.WriteLine(i);
+                        break;
+                    }
+                }
             }
 
         }

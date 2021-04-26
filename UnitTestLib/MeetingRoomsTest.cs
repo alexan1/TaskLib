@@ -3,7 +3,6 @@ using TaskLib;
 
 namespace UnitTestLib
 {
-
     [TestClass]
     public class MeetingRoomsTest
     {
@@ -100,6 +99,5 @@ namespace UnitTestLib
 
             Assert.AreEqual(result, MeetingRooms.MaxPeopleNumber(input));
         }
-
     }
 }

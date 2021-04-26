@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 
 namespace TaskLib
 {
     public class Product
     {
-        private int GetPriority(string productCode)
+        private static int GetPriority(string productCode)
         {
             return 1;
         }
 
         public string[] OrderProductsByPriority(string[] productCodes)
         {
-            return  productCodes.OrderBy(x => GetPriority(x)).ToArray<string>();
+            return  productCodes.OrderBy(GetPriority).ToArray();
         }        
     }
 }

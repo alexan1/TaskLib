@@ -36,19 +36,20 @@ namespace TaskLib
         public static string Reverse(string input)
         {
             string result;
-            if (input == null)
+            switch (input)
             {
-                throw new ArgumentNullException();
-            }
-            else if (input == string.Empty)
-            {
-                result = string.Empty;
-            }
-            else
-            {
-                char[] charArray = input.ToCharArray();
-                Array.Reverse(charArray);
-                result = new string(charArray);
+                case null:
+                    throw new ArgumentNullException();
+                case "":
+                    result = string.Empty;
+                    break;
+                default:
+                {
+                    var charArray = input.ToCharArray();
+                    Array.Reverse(charArray);
+                    result = new string(charArray);
+                    break;
+                }
             }
             return result;
         }
@@ -67,9 +68,8 @@ namespace TaskLib
 
             var regex = new Regex(string.Join("|", map.Keys));
 
-            string result = string.Empty;
             var output = Regex.Replace(input, @"[\d-]", string.Empty);           
-            result = regex.Replace(output, m => map[m.Value]);
+            var result = regex.Replace(output, m => map[m.Value]);
             return result;
         }
 

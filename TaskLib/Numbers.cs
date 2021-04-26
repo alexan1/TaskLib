@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace TaskLib
 {
     public static class Numbers
     {
-
         public static bool IsPrime(int number)
         {
             if (number <= 1) return false;
@@ -28,11 +28,9 @@ namespace TaskLib
 
             for( int i = 2, count = 0; count < 1000; i++)
             {
-                if (IsPrime(i))
-                {
-                    result.Add(i);
-                    count++;
-                }
+                if (!IsPrime(i)) continue;
+                result.Add(i);
+                count++;
             }
 
 
@@ -41,43 +39,39 @@ namespace TaskLib
 
         public static string GenerateLowestNumber(string number, int n)
         {
-            if (number == null || number.Length == 0 || n >= number.Length)
+            if (string.IsNullOrEmpty(number) || n >= number.Length)
             {
                 return null;
             }
 
-            int start = 0;
-            StringBuilder sb = new StringBuilder(number.Length - n);
-            for (int i = 0; i < number.Length - n; i++)
+            var start = 0;
+            var sb = new StringBuilder(number.Length - n);
+            for (var i = 0; i < number.Length - n; i++)
             {
-                int end = number.Length - n + i;
+                var end = number.Length - n + i;
                 if (start == end)
                 {
                     sb.Append(number[start]);
                     continue;
                 }
-                String subStr = number.Substring(start, end);
-                char min = FindMin(subStr);
+                var subStr = number.Substring(start, end);
+                var min = FindMin(subStr);
                 start = start + subStr.IndexOf(min) + 1;
                 sb.Append(min);
             }
             return sb.ToString();
         }
 
-        public static char FindMin(String subStr)
+        public static char FindMin(string subStr)
         {
             if (subStr.Length == 1)
             {
                 return subStr[0];
             }
-            char min = subStr[0];
-            for (int i = 0; i < subStr.Length; i++)
+            var min = subStr[0];
+            foreach (var num in subStr.Where(num => num < min))
             {
-                char num = subStr[i];
-                if (num < min)
-                {
-                    min = num;
-                }
+                min = num;
             }
             return min;
         }

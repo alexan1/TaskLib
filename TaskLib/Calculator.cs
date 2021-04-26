@@ -30,15 +30,12 @@ namespace TaskLib
 
         public static double Divide(int a, int b)
         {
-            checked
-            {
-                return Convert.ToDouble(a) / Convert.ToDouble(b);
-            }
+            return Convert.ToDouble(a) / Convert.ToDouble(b);
         }
 
         public static int ConvertToNumber(string str)
         {
-            if (Int32.TryParse(str, out int j))
+            if (int.TryParse(str, out var j))
                 return j;
             else
                 throw new ArgumentException();
@@ -67,8 +64,5 @@ namespace TaskLib
                 }
             }
         }
-
-
-
     }
 }

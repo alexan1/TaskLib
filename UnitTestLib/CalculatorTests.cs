@@ -40,7 +40,7 @@ namespace UnitTestLib
             "value exceeds")]
         public void OverflowExceptionAddTest()
         {
-            int a = int.MaxValue -1;
+            var a = int.MaxValue -1;
             _ = Calculator.Add(a, a);
         }
 
@@ -49,7 +49,7 @@ namespace UnitTestLib
             "value exceeds")]
         public void OverflowExceptionMultiplyTest()
         {
-            int a = 780000000;
+            const int a = 780000000;
             _ = Calculator.Mulptily(a, a);
         }
     }
