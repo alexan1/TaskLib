@@ -6,10 +6,10 @@ namespace UnitTestLib
 {
 
     [TestClass]
-    public class SynonymsTest
+    public class WordsTest
     {
         [TestMethod]
-        public void Sentence1()
+        public void SynonymsTest1()
         {
             const string text = "I am happy today but was sad yesterday";
             var synonims = new Dictionary<string, string>{ { "happy", "joy" }, { "sad", "sorrow" }, { "joy", "cheerful" } };
@@ -21,18 +21,22 @@ namespace UnitTestLib
                 "I am happy today but was sorrow yesterday",
                 "I am joy today but was sad yesterday",
                 "I am joy today but was sorrow yesterday" };
-            CollectionAssert.AreEqual(expected, Synonyms.Variants(text, synonims));
+            CollectionAssert.AreEqual(expected, Words.Synonyms(text, synonims));
         }
         [TestMethod]
-        public void Sentence2()
+        public void AnagramFalse()
         {
-           // Assert.AreEqual(0, Calk.Calc("1 - 1"), 1e-15);
+           Assert.IsFalse(Words.IsAnagram("Hello", "world"));
         }
         [TestMethod]
-        public void Sentence3()
+        public void AnagramTrue1()
         {
-            //Assert.AreEqual(1, Calk.Calc("1* 1"), 1e-15);
-            //Assert.AreEqual(1476, Calk.Calc("12* 123"), 1e-15);
+            Assert.IsTrue(Words.IsAnagram("acb", "bca"));
+        }
+        [TestMethod]
+        public void AnagramTrue2()
+        {
+            Assert.IsTrue(Words.IsAnagram("Lookout", "Outlook"));
         }
     }
 }
